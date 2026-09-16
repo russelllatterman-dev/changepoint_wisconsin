@@ -1,0 +1,62 @@
+
+How does read-in data work with my program
+
+
+a_start_initialization is run
+
+set number of samples
+
+...
+Ton of crap
+...
+
+
+
+if do_well_data == 1
+
+	well_data_practice
+
+		if useCovidData == 1
+			if useLinearized == 1
+				imports linearized data
+
+			else
+				imports original data file
+
+
+
+
+
+
+We would like the following changes
+
+Have a general code line for read-in data, rather than just for well data.
+
+X_well
+Change all imported data to
+	Xin
+
+Files that respond to 
+	do_well_data
+		a_start_initialization
+		insertion_deletion_demo
+		plots_demo
+		
+		changed 
+			do_well_dat
+		to	do_imprted_data
+
+if do_well_data == 1
+if do_imported_data == 1
+
+	well_data_practice
+
+		if useCovidData == 1
+			if useLinearized == 1
+				imports linearized data
+
+			else
+				imports original data file
+
+
+
