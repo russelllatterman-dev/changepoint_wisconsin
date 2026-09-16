@@ -1,0 +1,6 @@
+
+
+
+global sig2_two_groups
+global sig2_g
+

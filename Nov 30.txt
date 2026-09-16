@@ -1,0 +1,52 @@
+Nov 30
+Adjacent point analyzer and insertion/deletion frequency analyzer
+
+Variable
+adjacentPointCount %counts how many times we have adjacent points
+
+adjacentPointCount = 0; %Counts how many times we end up having adjacent points
+possibleInsertionSteps = 0; %Counts how many times we attempt to do an insertion step
+
+insertionStepsPerformed = 0; %Counts how many times we can do the insertion step
+                            %(we can't do the insertion step if we have
+                            %adjacent points)
+
+
+Line 413
+for k = 1:(length(S)-1)
+        possibleInsertionSteps = possibleInsertionSteps + 1;
+
+
+
+Keep track of insertion probabilities
+Line 687
+
+probInsertion(rep,k) = acceptanceProb; %Stores insertion and deletion probabilities
+pIn(rep,k) = acceptanceProb;
+
+Note "acceptanceProb" is actually the log of 
+
+logAccept = min(0,logP0_over_P1);
+
+
+To save time, we could change the "normpdf" calculations into direct calculations
+
+
+Groups need to be assigned appropriately
+
+Code for running estimated ARMA model on data needs to be made
+Show "true" ARMA estimates
+Show estimates based on the segments identified by the program
+
+
+Set a minimum interval width
+
+Need to search the code to figure out what the deal is with 
+"sig2_0paper"
+
+
+Do I need to run the posterior groups thing after each insertion and deletion? 
+What about posterior variance?
+
+What about posterior means after each insertion/deletion step, rather than at the end of the run?
+

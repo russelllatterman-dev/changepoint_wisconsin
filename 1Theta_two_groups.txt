@@ -1,0 +1,171 @@
+To adapt the program for theta by groups
+
+Need to initialize all data points correctly
+
+Is the following supposed to be changed?
+pi_group1
+This is in  insertion_deletion_demo
+For guessing groups. But this isn't being done based on the updated pi parameters
+
+
+
+%Will need to find everything that depends on theta in order to add group information
+
+This includes the error_update file
+
+Big changes made on Nov 20th
+insertion_deletion_demo
+%Nov 20
+%Using probabilities based on updates
+
+
+Do I need to run 
+error_update multiple times
+After update Pi and Tau
+In posterio_mu_groups?
+
+In. insertion_deletion
+theta0_guess = rand()/2; Probably should be changed to rand()
+
+
+Where are
+mu_g_1
+tau2_g_1
+
+Used?
+
+In error_update
+Change psi_g to 
+gk_segmentsGroups? Or just make sure
+psi_g is up to date
+
+
+muEstimates  What is this used for?
+
+This needs to be fixed in insertion_deletion_demo
+
+if do_random_generation == 1 %<--- work on this
+% <<< assume left and right group vaiances are equal
+
+
+In the a_start file
+
+if test_exact_paper == 1 
+do_random_generation = 0; %<--this could be a problem
+
+if do_imported_data == 1
+do_random_generation = 0;
+
+Changes can be found by searching for 
+
+%THETA2
+
+a_start_initialization
+theta_g      = [0,0]; %THETA2	line 295
+
+theta_g = [-.6 , -.6] %THETA2. Line 113 of a_start
+
+%thetaParam = theta_g(gr); THETA2. Line 556 need to uncomment this
+
+ina_start
+%lambda_t = c + psiParam*(Xt(i-1)-c) + thetaParam*et(i-1); THETA2
+
+insertion_deletion_demo
+thetaEstimatesGroups = zeros(samples,2); %THETA2
+
+theta_g = [thetaMA_0, thetaMA_0]; %THETA2
+
+
+
+%Search for 
+% THETA2 and Nov 18
+
+
+groupTau_fixed
+
+
+Do I ever use the variable thetaMA? Found in line 439 of a_start ?
+
+Do I ever use psiAR?
+
+gk_groupMeans(:,i)
+m1_true
+m2_true
+
+gk_groupVariances(:,i)
+t1_true
+
+gk_groupProbabilities(:,1)
+pi2_true
+
+Psi1  Psi2
+psiEstimatesGroups(:,i)
+
+
+psi_g %what about this variable?
+psi_two_groups
+psi
+
+Psi for one group
+	psiEstimates(
+
+
+thetaEstimates
+	sometimes we get NaN error for this one
+theta	
+
+
+Phi
+	phiEstimates
+
+
+Sigma squared
+	sig2Estimates
+
+PSI NaN error
+	happened when we had two groups
+
+
+What about the startup options in a_start_initialization?
+
+
+
+
+
+T(K) function varies quite a bit depending on whether we are doing updates or not. But do we need to keep these values in place for parameters that we are using, even if we are not updating them?
+
+Comparison on psi and theta to what we get if we estimate using typical ARMA fitting model
+
+Why not standardize all of the data before running the algorithm? Would it run faster that way?
+
+
+
+
+
+psi_hat_adjusted
+
+
+
+
+
+
+%  At the end of this file
+%  begins ----> | insertion_deletion_demo
+%               |  %   ----> plots_demo		
+%               |  %   ----> tracePlot_group_updates
+%               |  % outputs means for parameters
+
+
+
+
+
+
+a_start_initialization
+
+	do_imported_data = 1
+
+
+insertion_deletion_demo
+Options
+
+doRegressionTest = 0

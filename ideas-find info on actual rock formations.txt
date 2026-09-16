@@ -1,0 +1,41 @@
+
+What if I calculate insertion/deletion probabilities they way they do?
+
+734 or so
+
+462 or so
+
+If deletionStep
+
+If insertionStep
+
+deletionOccurs = 1;
+InsertionOccurs = 1;
+
+They remove outliers
+
+They set phi to be 0.1 and use a uniform rv for this
+
+I think a Poisson rv might make more sense
+
+Also, if we know how many rock formations should be present, then we will have a better idea of what to do.
+
+We can also look for change points and choose them manually
+
+We can remove outliers manually, or by certain criteria
+
+
+
+Deviance information Criterion used to "compare" the models
+
+
+"These results are somewhat similar to the previous results found in the change-point literature [1, 34–36]."
+	But they don't actually show the results from the previous literature
+
+I can be the "first" to actually get better results, potentially.
+
+
+They make no mention of estimating groups. But if we know how many types of rock formation are present, we should be able to determine whether groups are appropriate, and how many groups we need.
+
+
+Page 18, they mention that their model is not suitable for data sets on which variances differ by segment.

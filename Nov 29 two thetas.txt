@@ -1,0 +1,141 @@
+
+
+psi_g_true
+psi_g
+Psi
+
+
+theta_g_true
+theta_g
+Theta
+
+
+thetaEstimates
+thetaEstimatesGroups
+
+
+Every iteration can we calculate an ARMA model?
+How do we turn this whole thing into an ARIMA model?
+
+Can this program be designed for generalization?
+
+
+do_random_generation = 1 %%% Highly influential on how the code works
+
+
+gk_groupPsi             = zeros(samples,2); %Might not use this vector
+gk_groupTheta           = zeros(samples,2); %Might not use this vector
+
+
+theta0_guessGroups = [rand(),rand()];  %In insertion deletion line 98
+theta0_guess = theta0_guessGroups(1);
+
+
+psiAR_0paper %This is our best guess if we assume that we are not updating the parameter
+
+Modify so that we have two theta values
+
+
+% MA  THETA%%%%%%
+Line 103 this part should probably be removed
+It seems to just be repeating something
+
+
+posterior_mu_groups
+Are t1 and t2 the correct variables to be using?
+
+
+
+In posterior_mean
+
+This is updating groups improperly
+
+if  dmeanUpdate <= 0
+            dgroupUpdate = 1; %A very basic way to update groups
+        else
+            dgroupUpdate = 2;
+        end
+
+
+In insertion_deletion_demo
+We should probably have psi_g   and theta_g
+
+
+if rep > 1      
+                    psi_left  = psiEstimatesGroups(rep,g_left); %Nov 18th 
+                    psi_right = psiEstimatesGroups(rep,g_right); %Nov 18th
+                    pi_group1 = gk_groupProbabilities(rep,2);
+                else
+                    psi_left = psi;
+                    psi_right = psi;
+                end
+
+
+
+
+If doNewUpdates == 1
+
+Tries all the new updates
+
+
+
+
+For
+
+%% Insertion probabilities
+In insertion_deletion_demo
+
+Need to change the T(K) function
+
+
+%In poserior_mean
+%Is this supposed correct?
+
+tau2gk = groupTau_fixed(g_left); %Calculated during the deletion step
+        mu_gk  = groupMu_fixed(g_left); 
+
+
+
+
+Get a collection of variances and means for the posterior distributions to see where things my get too big to be utilizable
+
+
+
+Page 4 of the paper they talk about psi and theta being the same for each group.
+
+Page 5 of the paper regarding the appropriateness of the priors for the variance of the distribution of c and the variance of the error terms 
+
+
+Note that in general the sig- nal xt can be shifted and scaled so that the above prior is appropriate.
+
+
+
+tauG1_fixed     = t1;  %<----- March14 change
+tauG2_fixed     = t2;
+muG1_fixed      = m1;
+muG2_fixed      = m2;
+
+
+Hold up.... Do we have no error when we have adjacent change points????
+dErrorRight(1) = dXdataRight(1) - dc_right;
+                if length(dErrorRight) > 1 
+                    for j = 2:length(dXdataRight)
+                        %lambda = dc_null  + psi_right*(dintervalData(j-1)-dc_null) + theta * error_full(j-1); %Nov 18
+                        lambda = dc_right + psi_d_right*(dXdataRight(j-1)-dc_right) + theta_d_right*dErrorRight(j-1);
+                        dErrorRight(j) = dXdataRight(j) - lambda;
+                    end
+                end
+
+
+%E2. Is where we will be changing everything so that we have errors that differ by group
+
+
+Should be declared global
+
+sig2error
+phi
+
+
+Do deletion mean updates?
+
+

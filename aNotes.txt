@@ -1,0 +1,124 @@
+
+
+Vars	priors		mean
+
+
+
+mu_n	N(0,1)		0.5
+theta	U(-1,1)		0	assume theta and psi are independent
+psi 	U(-1,1)		0	We choose these for stationarity
+
+phi	U(0,1)  	0.5
+	"beta(1,1)"
+
+tau^2 	gamma(3,3)	1
+sigma^2	gamma(3,3)	1
+
+
+pi	disc U(pi1,pi2)	0.5
+     dirichlet(pi1,pi2)
+
+
+
+mu_n is Distribution of ARMA means in segment class N
+
+
+Target distribution multiplied by the probability of selecting the move type when the element is the current element
+
+"Subset contains
+|--------| current segmentation
+|----|---| new segmentation with changepoint inserted
+	
+
+
+If an insertion did not occur, we are dealing with the following two cases
+
+|--------|--------| current segmentation
+|-----------------| left endpoint removed, resulting in a merger of current segment and previous segment
+
+
+If an insertion did occur, we are dealing with these two cases
+
+|----|---|--------|
+|----|------------|
+
+
+
+Insertion and Deletion code: What does this code do?
+The code simply picks a random point and decides to accept or reject the insertion of a new change point.
+
+Then we move on and decide whether to delete the nearest change point further along.
+
+
+
+The main code calculates acceptance and rejection probabilities. We will pass these probabilities in to the insertion and deletion program
+
+-------------
+
+Agri5lock7force4keycard88
+
+
+
+Take some time series data
+Fit an AR model to it
+
+
+
+Replicate this project for ARIMA processes
+	Might want a mean term for that
+		We might have linear trends
+
+
+
+To get started varying AR behavior, have PHI that varies
+	Generate data 
+		
+Important theory component
+	appropriate distribution
+		for example, is a truncated normal more appropriate than a 
+		uniform?
+
+3 chapters
+
+ARIMA
+
+AR	-	non-constant parameter (do we see change in variance)
+		Look for change-points based on the mean term and the auto-	regressive coefficient. This can be useful for applications
+
+Applications
+
+
+
+g_left = 1;
+    g_right = 2;
+    mu_g_1 = 0;      % <<< ----------- mu  * NW * - fixed
+    mu_g_2 = 0;
+    tau2_g_left = 4;    % <<< assume left and right group vaiances are equal
+    tau2_g_right= 4; %Based on figure 4 page 11
+    tau2_g = 4;
+    pi_group1 = 0.5; 
+    
+    sig2error = 0.96; %Value from paper
+    psi = 0.22;   % From paper: fixed values between -1 and 1
+    theta = 0.6; % From paper: fixed values between -1 and 1
+
+
+
+
+
+
+
+
+
+	
+
+
+	
+		
+
+
+
+
+
+
+

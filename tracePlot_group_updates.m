@@ -1,0 +1,59 @@
+%Debug
+figure('Name','Traces. Estimates dashed (halfway burn-in)')
+%%%
+% Runs
+%   gets caled from the plots_demo file
+global m1_true
+
+tiledlayout(3,2)
+
+burnIn = floor(length(gk_groupMeans))/2;
+lastVal = length(gk_groupMeans);
+burnRange = burnIn:lastVal;
+
+mu1_burn =  mean(gk_groupMeans(burnRange,1));
+mu2_burn =  mean(gk_groupMeans(burnRange,2));
+var1_burn = mean(gk_groupVariances(burnRange,1));
+var2_burn = mean(gk_groupVariances(burnRange,2));
+pi1_burn  = mean(gk_groupProbabilities(burnRange,1));
+pi2_burn  = mean(gk_groupProbabilities(burnRange,2));
+ 
+nexttile
+%plot(Xt)
+plot(gk_groupMeans(:,1))
+yline(m1_true,'LineWidth',2,'color','green')
+hold on
+yline(mu1_burn,'--')
+title('Group 1 mean')
+
+nexttile
+plot(gk_groupMeans(:,2))
+yline(m2_true,'LineWidth',2,'color','green')
+yline(mu2_burn,'--',2)
+title('Group 2 mean')
+
+nexttile
+plot(gk_groupVariances(:,1))
+yline(t1_true,'LineWidth',2,'color','green')
+yline(var1_burn,'--')
+title('Group 1 variance')
+
+nexttile
+plot(gk_groupVariances(:,2))
+yline(t2_true,'LineWidth',2,'color','green')
+yline(var2_burn,'--')
+title('Group 2 variance')
+
+nexttile
+plot(gk_groupProbabilities(:,1))
+yline(pi1_true,'LineWidth',2,'color','green')
+yline(pi1_burn,'--')
+title('pi1')
+
+
+nexttile
+plot(gk_groupProbabilities(:,2))
+yline(pi2_true,'LineWidth',2,'color','green')
+yline(pi2_burn,'--')
+title('pi2')
+
